@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pokedex</title>
+    <link rel="shortcut icon" href="/images/res/mipmap-xxxhdpi/ic_launcher.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/duotone.css"
+        integrity="sha384-R3QzTxyukP03CMqKFe0ssp5wUvBPEyy9ZspCB+Y01fEjhMwcXixTyeot+S40+AjZ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/fontawesome.css"
+        integrity="sha384-eHoocPgXsiuZh+Yy6+7DsKAerLXyJmu2Hadh4QYyt+8v86geixVYwFqUvMU8X90l" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <!-- Nav bar -->
+    <nav class="navbar fixed sticky-top navbar-expand-lg navbar-dark da-dark" id="navbar">
+        <a class="navbar-brand navbar-text" href="#">Pokédex </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Search -->
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fad fa-search"></i> Search
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item">
+                              <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                            id="nav_search">
+                            </a>
+                        </div>
+                      </div>
+                    <!-- <div class="accordion " id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <a class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseSearch" aria-expanded="true" aria-controls="collapseSearch">
+                                        <i class="fad fa-search"></i> Search 
+                                    </a>
+                                </h2>
+                            </div>
+
+                            <div id="collapseSearch" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                                        id="nav_search">
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </li>
+                <!-- Search -->
+                <!-- Regions -->
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fad fa-map-marked"></i> Regions
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#" onclick="completeDex()" data-toggle="collapse"
+                            data-target=".navbar-collapse.show">All</a>
+                        <a class="dropdown-item" href="#" onclick="kantoDex()" data-toggle="collapse"
+                            data-target=".navbar-collapse.show">Kanto</a>
+                        <a class="dropdown-item" href="#" onclick="jhotoDex()" data-toggle="collapse"
+                            data-target=".navbar-collapse.show">Jhoto</a>
+                        <a class="dropdown-item" href="#" onclick="hoennDex()" data-toggle="collapse"
+                            data-target=".navbar-collapse.show">Hoenn</a>
+                        <a class="dropdown-item" href="#" onclick="sinnohDex()" data-toggle="collapse"
+                            data-target=".navbar-collapse.show">Sinnoh</a>
+                        <a class="dropdown-item" href="#" onclick="unovaDex()" data-toggle="collapse"
+                            data-target=".navbar-collapse.show">Unova</a>
+                        <a class="dropdown-item" href="#" onclick="kalosDex()" data-toggle="collapse"
+                            data-target=".navbar-collapse.show">Kalos</a>
+                        <a class="dropdown-item" href="#" onclick="alolaDex()" data-toggle="collapse"
+                            data-target=".navbar-collapse.show">Alola</a>
+                        </div>
+                      </div>
+                    <!-- <div class="accordion " id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <a class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                       <i class="fad fa-map-marked"></i> Regions
+                                    </a>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <a class="nav-link" href="#" onclick="completeDex()" data-toggle="collapse"
+                                        data-target=".navbar-collapse.show">All</a>
+                                    <a class="nav-link" href="#" onclick="kantoDex()" data-toggle="collapse"
+                                        data-target=".navbar-collapse.show">Kanto</a>
+                                    <a class="nav-link" href="#" onclick="jhotoDex()" data-toggle="collapse"
+                                        data-target=".navbar-collapse.show">Jhoto</a>
+                                    <a class="nav-link" href="#" onclick="hoennDex()" data-toggle="collapse"
+                                        data-target=".navbar-collapse.show">Hoenn</a>
+                                    <a class="nav-link" href="#" onclick="sinnohDex()" data-toggle="collapse"
+                                        data-target=".navbar-collapse.show">Sinnoh</a>
+                                    <a class="nav-link" href="#" onclick="unovaDex()" data-toggle="collapse"
+                                        data-target=".navbar-collapse.show">Unova</a>
+                                    <a class="nav-link" href="#" onclick="kalosDex()" data-toggle="collapse"
+                                        data-target=".navbar-collapse.show">Kalos</a>
+                                    <a class="nav-link" href="#" onclick="alolaDex()" data-toggle="collapse"
+                                        data-target=".navbar-collapse.show">Alola</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </li>
+                <!-- Regions -->
+                <!-- <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Modal - Pokemon Full Date -->
+
+
+    <!-- Modal -->
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal_pokemon_info">
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!--  -->
+
+
+    <!-- Pokedex view -->
+    <div id="poke_container">
+        <ul id="pokedex"></ul>
+        <ul id="pokemon-entry"></ul>
+    </div>
+    <!--  -->
+    
+
+    <!-- Floating button -->
+    <!-- Floating button -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+
+<!-- 
+    <a class="nav-link" href="#" onclick="kantoDex()" data-toggle="collapse" data-target=".navbar-collapse.show">Kanto</a>
+    <a class="nav-link" href="#" onclick="jhotoDex()" data-toggle="collapse" data-target=".navbar-collapse.show">Jhoto</a>
+    <a class="nav-link" href="#" onclick="hoennDex()" data-toggle="collapse" data-target=".navbar-collapse.show">Hoenn</a>
+    <a class="nav-link" href="#" onclick="sinnohDex()" data-toggle="collapse" data-target=".navbar-collapse.show">Sinnoh</a>
+    <a class="nav-link" href="#" onclick="unovaDex()" data-toggle="collapse" data-target=".navbar-collapse.show">Unova</a>
+    <a class="nav-link" href="#" onclick="kalosDex()" data-toggle="collapse" data-target=".navbar-collapse.show">Kalos</a>
+    <a class="nav-link" href="#" onclick="alolaDex()" data-toggle="collapse" data-target=".navbar-collapse.show">Alola</a> -->
